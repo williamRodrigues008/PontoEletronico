@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.login {
+    width: 45%;
+    height: 60vh;
+    border: 2px solid #4cff00;
+    box-shadow: 0em 1em 1em gray;
+    border-radius: 10px; 
+
+}
+
+.relogio{
+    width: 13vw;
+    height: 16vh;
+}
+
+.facaLogin{
+    width:90%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+label{
+    margin-top: 3vh;
+    width: 60%;
+    text-align: left;
+}
+input{
+    width: 60%;
+}
+.btnEntrar{
+    background-color: transparent;
+    border: none;
+}
+.entrar {
+    color: green;
+    margin-top: 2vh;
+    font-size: 30pt;
+}
+
+.navbar {
+    border-bottom: 1px solid green;
+}
+
+.logo {
+    font: bold 20pt verdana;
+    background-image: linear-gradient(to right, #000000, Green);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+}
+
+.corpo {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.formularioLogin {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.matriculaSenha {
+    color: green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+}
+
+.personagem{
+    height: 75vh;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 768px){
+    .personagem {
+        display: none;
+    }
+
+    .login {
+        width: 90%;
+    }
+  }

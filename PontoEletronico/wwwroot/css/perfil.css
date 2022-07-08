@@ -1,0 +1,33 @@
+﻿.corpo{
+	border: 1px solid green;
+	border-radius: 3px;
+	color: red;
+	display: flex;
+}
+
+.informacoesPessoais{
+	width: 20vw;
+	border-right: 1px solid green;
+	height: 100%;
+	background-color: #e6e6e6;
+}
+.divImagem{
+	width: 100%;
+	height: 30vh;
+	background-color: aliceblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fotoPerfil {
+	border-radius: 50%;
+	width: 15vw;
+	height: 22vh;
+	background-color: aqua;
+	border: 1px solid purple;
+}
+.painel {
+	width: 60vw;
+}
+

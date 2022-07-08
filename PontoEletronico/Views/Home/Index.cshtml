@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="corpo text-center">
+        <div class="personagem">
+            <img src="~/personagem.png" class="personagem">
+
+        </div>
+    <div class="login">
+        <form class="formularioLogin" asp-controller="Home" asp-action="Entrar">
+            <img src="~/facaLogin.png" class="facaLogin">
+            <img src="~/relogio.png" class="relogio">
+            <div class="matriculaSenha">
+                <label for="usuario">Matrícula</label>
+                <input type="email" name="usuario" placeholder="Insira sua matrícula" />
+            </div>
+            <div class="matriculaSenha">
+                <label for="Senha">Senha</label>
+                <input type="password" name="senha" placeholder="Insira sua senha" />
+            </div>
+            <button class="btnEntrar" type="submit"><i class="entrar fa-solid fa-arrow-right-long"></i></button> 
+        </form>
+    </div>
+</div>
