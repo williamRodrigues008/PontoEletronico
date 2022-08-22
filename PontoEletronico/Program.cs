@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using PontoEletronico.Interfaces;
 using PontoEletronico.Models;
+using PontoEletronico.Models.Classes;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,7 @@ builder.Services.AddAuthentication("Identity.Login")
 					config.ExpireTimeSpan = TimeSpan.FromHours(1);
 				});
 builder.Services.AddDbContext<AppDbContext>(opts =>
-				opts.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+				opts?.UseSqlServer(builder.Configuration.GetConnectionString("StringConexao")));
 
 
 builder.Services.AddControllersWithViews();
@@ -41,6 +43,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	pattern: "{controller=Inicio}/{action=Index}/{id?}");
 
 app.Run();

@@ -1,0 +1,36 @@
+﻿@model PontoEletronico.Models.Classes.Usuarios;
+@{
+    var autenticado = User.Identity.IsAuthenticated;
+}
+<link rel="stylesheet" href="~/css/inicio.css" asp-append-version="true" />
+
+<div class="corpo">
+    <div class="saudacao">
+       <div class="texto">
+            @if (autenticado)
+            {
+                <p>Selecione o tipo de registro</p>
+            }
+            else
+            {
+                <img class="imagemBemVindo" src="~/bemvindo.png"/>
+            }
+       </div> 
+    </div>
+    <div class="opcoes">
+       <div class="divBotoes">
+           @if (@autenticado)
+            {
+                <a class="btnOpcoes" type="text/asp" asp-controller="Inicio" asp-action="RegistrarEntrada"><i class="fa-solid fa-arrow-right-to-bracket"></i>&nbsp Registrar Entrada</a>
+                <p>@ViewBag.Status</p>
+                <a class="btnOpcoes" type="text/asp" asp-controller="Inicio" asp-action="RegistrarPausa"><i class="fa-solid fa-pause"></i> &nbsp Registrar Pausa</a>
+                <a class="btnOpcoes" type="text/asp" asp-controller="Inicio" asp-action="RegistrarRetorno"><i class="fa-solid fa-play"></i> &nbsp Registrar Retorno</a>
+                <a class="btnOpcoes" type="text/asp" asp-controller="Inicio" asp-action="RegistrarSaida"><i class="fa-solid fa-arrow-right-from-bracket"></i> &nbsp Registrar Saída</a>
+            }
+            else{
+            <a class="btnOpcoes" type="text/asp" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-door-open"></i>&nbsp&nbsp Fazer Login</a>
+            <a class="btnOpcoes"><i class="fa-solid fa-user-plus"></i> &nbsp Solicitar Cadastro</a>
+            }
+       </div>
+    </div>
+</div>

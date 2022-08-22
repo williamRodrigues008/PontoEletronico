@@ -1,0 +1,95 @@
+﻿@using PontoEletronico.Models.Classes
+@model Usuarios;
+@{
+    ViewData["title"] = "Perfil";
+}
+<link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
+@{
+    var dia = ViewBag.Dia;
+    var semana = ViewBag.Semana;
+    var mes = ViewBag.Mes;
+    var extra = ViewBag.Extra;
+    var total = ViewBag.Total;
+}
+<div class="corpo">
+    <div class="informacoesPessoais">
+        <form asp-controller="Perfil" asp-action="Index" enctype="multipart/form-data">
+            <div class="divImagem">
+                <img src="~/Imagens/@Model.Foto" class="fotoPerfil"/>
+                <input type="file" id="nomeArquivoImg" name="foto" class="fa-solid fa-camera selecionarImagem" />
+                <button type="submit" class="fa-solid fa-check"></button>
+            </div>
+            <h5>@Model.Nome</h5>
+            <input name="usuario" type="number" value="@Model.Id" hidden="true" />
+        </form>
+        <label>Telefone: <br />@Model.Telefone</label>
+        <label>Email: @Model.Email</label>
+    </div>
+    <div class="painel">
+        <div class="cabecalhoPainel">
+            <div class="tituloCabecalho"><h1>Jornada de trabalho</h1></div>
+            <div class="detalhesCabecalho">
+                <span><strong>Diária:</strong> 8 horas</span>
+                <span><strong>Semanal:</strong> 44 horas</span>
+                <span><strong>Mensal:</strong> 220 horas</span>
+                
+            </div>
+        </div>
+
+        <div class="corpoPainel">
+            <div class="informacoesDeHoras">
+                <div class="tituloCardHoras"><h3>Total Dia</h3></div>
+                <h1>@dia h</h1>
+            </div>
+        
+            <div class="informacoesDeHoras">
+                <div class="tituloCardHoras"><h3>Total Semana</h3></div>
+                <h1>@semana h</h1>
+            </div>
+        
+            <div class="informacoesDeHoras">
+                <div class="tituloCardHoras"><h3>Total Mês</h3></div>
+                <h1>@mes h</h1>
+            </div>
+            
+            <div class="informacoesDeHoras">
+                <div class="tituloCardHoras"><h3>Horas Extras</h3></div>
+                <h1>@extra h</h1>
+            </div>
+            
+            <div class="informacoesDeHoras">
+                <div class="tituloCardHoras"><h3>Total Cumpridas</h3></div>
+                <h1>@total h</h1>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    var contexto = document.getElementById("Grafico");
+var grafico = new Chart(contexto, {
+    type: 'bar',
+    data: {
+        labels: ["Entrada","Saída","Almoço","Horas Totais"],
+        datasets: [{
+            data: [15,12,20,10],
+            backgroundColor: Object.values(["dodgerblue","red","forestgreen","pink"])
+        }]
+    },
+    options: {
+        legend: {
+            display: false
+        },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }  
+});
+</script>

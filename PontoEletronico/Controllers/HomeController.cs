@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using PontoEletronico.DadosSql;
 using PontoEletronico.Models;
+using PontoEletronico.Models.Classes;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Security.Claims;
@@ -20,15 +23,16 @@ namespace PontoEletronico.Controllers
 		{
 			return View();
 		}
-		public async Task<IActionResult> Entrar(string usuario, string senha)
+		public async Task<IActionResult> Entrar(string email, string senha)
 		{
-			SqlConnection conexao = new SqlConnection(@"Data Source=DESKTOP-48ULVVB\NASERVER;Initial Catalog=Ponto;Integrated Security=True");
+			Conexao conexao = new();
+			var jornada = new JornadaHoras();
+			var cmd = conexao.ComandoSql("spUsuarios");
+			cmd.CommandType = CommandType.StoredProcedure;
+			cmd.Parameters.AddWithValue("@email", email);
+			cmd.Parameters.AddWithValue("@senha", senha);
 
-			await conexao.OpenAsync();
-			string retornoDados = $"select * from Usuarios where usuario = '{usuario}' and senha = '{senha}'";
-			SqlCommand comandoSql = new(retornoDados, conexao);
-
-			SqlDataReader leitor = comandoSql.ExecuteReader();
+			SqlDataReader leitor = cmd.ExecuteReader();
 
 			if (await leitor.ReadAsync())
 			{
@@ -50,9 +54,7 @@ namespace PontoEletronico.Controllers
 					IsPersistent = true,
 					ExpiresUtc = DateTime.Now.AddHours(1),
 				});
-
-				return RedirectToAction("Perfil", "Home");
-				//return RedirectToAction("Index");
+				return RedirectToAction("Index", "Perfil");
 			}
 			else
 			{
@@ -60,10 +62,6 @@ namespace PontoEletronico.Controllers
 			}
 		}
 
-		public IActionResult Perfil()
-		{
-			return View();
-		}
 		public IActionResult Privacy()
 		{
 			return View();

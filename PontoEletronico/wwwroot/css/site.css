@@ -57,6 +57,14 @@ input{
     color: transparent;
     text-decoration: none;
 }
+.nomeUsuario{
+    width: 20vw;
+    background-color: blue;
+}
+.imagemPerfil{
+    width: 6vw;
+    height: 6vh;
+}
 
 .corpo {
     height: 80vh;

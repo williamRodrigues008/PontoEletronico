@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PontoEletronico.Interfaces;
 using PontoEletronico.Models.Classes;
 
 namespace PontoEletronico.Models
@@ -9,6 +10,7 @@ namespace PontoEletronico.Models
 			: base(options)
 		{
 		}
-		public DbSet<Perfil> PerfilUsuario { get; set; }
+		public DbSet<Usuarios> Usuarios { get; set; }
+		public DbSet<Registros> Registros { get; set; }
 	}
 }

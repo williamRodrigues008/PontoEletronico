@@ -1,33 +1,126 @@
-﻿.corpo{
+﻿
+.corpo{
+	width: 100%; 
 	border: 1px solid green;
-	border-radius: 3px;
-	color: red;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0.5em 0.5em 1em gray;
 	display: flex;
 }
 
-.informacoesPessoais{
+.informacoesPessoais {
 	width: 20vw;
+	border-radius: 5px 0px 0px 5px;
 	border-right: 1px solid green;
 	height: 100%;
-	background-color: #e6e6e6;
+	background-image: linear-gradient(to right, #222222,#222222);
+	padding: 1vw;
+	color: white;
+	font-family: titillium-web, sans-serif;
+}
+h5{
+	color: white;
+	text-align: center;
 }
 .divImagem{
 	width: 100%;
-	height: 30vh;
-	background-color: aliceblue;
+	height: 20vh;
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	align-items: end;
+	margin-bottom: 2vh;
 }
 
 .fotoPerfil {
 	border-radius: 50%;
-	width: 15vw;
-	height: 22vh;
+	width: 10vw;
+	height: 17vh;
 	background-color: aqua;
-	border: 1px solid purple;
+	border: 1px solid green;
 }
+
+.selecionarImagem{
+	font-size: 18pt;
+	margin-left: -10px;
+	width: 24px;
+	color: gray;
+}
+.fa-check{
+	font-size: 22pt;
+	margin-left: 3px;
+	width: 2vw;
+	border: none;
+	color: #44ba29;
+	background-color: transparent;
+
+}
+.btn {
+	width: 70px;
+}
+
 .painel {
 	width: 60vw;
+	height: 100%;
+	display: flex;
+	display: flex;
+	flex-direction: column;
+}
+
+.cabecalhoPainel {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.tituloCabecalho {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.detalhesCabecalho {
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.corpoPainel {
+	width: 100%;
+	height: 90%;
+	padding: 5vh;
+	display: flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.informacoesDeHoras {
+	width: 15vw;
+	height: 20vh;
+	margin: 10px;
+	border: 1px solid #44ba29;
+	border-radius: 10px;
+}
+.informacoesDeHoras h1{
+	text-align: center;
+	color: green;
+	font-size: 50pt;
+}
+.tituloCardHoras {
+	color: #222222;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #e6e8e6;
+	border-radius: 10px 10px 0px 0px;
+	width: 100%;
+	height: 7vh;
 }
 

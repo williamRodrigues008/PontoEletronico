@@ -1,0 +1,90 @@
+﻿main {
+	width: 100vw;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #e9ffeb;
+	background-size: 100%;
+	background-repeat: none;
+}
+
+.container {
+	margin: 0px;
+	padding: 0px;
+}
+
+.corpo {
+	font-family: titillium-web, sans-serif;
+	width: 100%;
+	height: 82vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.saudacao {
+	display: flex;
+	height: 40%;
+	width: 100%;
+	font-size: 40pt;
+	justify-content: center;
+}
+
+.texto {
+	display: flex;
+	align-items: center;
+	background-image: linear-gradient(to right, #00ff21, green, #00ff21);
+	-webkit-background-clip: text;
+	color: transparent;
+	height: 100%;
+	justify-content: center;
+	width: 50%;
+	font-weight: 800;
+}
+
+.opcoes {
+	height: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.divBotoes {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	width: 30vw;
+	border-radius: 10px;
+	border: 2px solid #00ff21;
+	background-color: white;
+	opacity: 0.8;
+	box-shadow: 0em 0.5em 0.5em gray;
+
+}
+
+.btnOpcoes {
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	font-size: 20pt;
+	height: 10vh;
+	border-radius: 5px;
+	border: none;
+	color: #0aab0c;
+}
+
+	.btnOpcoes:hover {
+		background-color: #222222;
+		color: #00ff21;
+		transition: all .3s ease-in-out;
+	}
+
+	.imagemBemVindo{
+	width: 80vw;
+	height: 30vh;
+}
